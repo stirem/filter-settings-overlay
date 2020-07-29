@@ -1,0 +1,103 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	background: #FFF8E5;
+  line-height: 150%;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: green;
+}
+
+.content-wrap {
+	max-width: 800px;
+	width: 85%;
+	margin: 100px auto;
+	background: #fff;
+	padding: 20px;
+}
+
+.button_openClose {
+  position: absolute;
+  background: gray;
+  color: white;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  z-index: 3;
+  cursor: pointer;
+  top: 0;
+}
+
+.overlay-box {
+	width: 86%;
+  display: none;
+  left: 50%;
+  margin-left: -43%;
+  position: absolute;
+  background: black;
+  color: white;
+  z-index: 2;
+  padding: 32px;
+  top: 0;
+	box-shadow: 0px 0px 10px 0px #000;
+}
+
+.tags {
+
+}
+
+
+/*----------------- SLIDER ------------------*/
+section.slider {
+  width: 100%;
+	position: relative;
+	margin-bottom: 32px;
+	margin-top: 50px;
+}
+
+section.slider input {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 2px;
+  background: #fff;
+  outline: none;
+
+	/*position: absolute; /* keeps them on top of each other */
+
+}
+
+section.slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  cursor: pointer;
+	border-radius: 50%;
+}
+
+section.slider input::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+	border-color: #fff;
+}
+/*--------------- SLIDER END ----------------*/
