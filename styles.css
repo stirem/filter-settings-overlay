@@ -39,7 +39,7 @@ a {
   text-align: center;
   padding: 10px;
   margin: 5px;
-  z-index: 3;
+  z-index: 4;
   cursor: pointer;
   top: 0;
 }
@@ -59,21 +59,23 @@ a {
 }
 
 .tags {
-
+	position: relative;
+	margin-top: 150px;
 }
 
 
 /*----------------- SLIDER ------------------*/
-section.slider {
+.slider {
   width: 100%;
 	position: relative;
 	margin-bottom: 32px;
 	margin-top: 50px;
 }
 
-section.slider input {
+.slider input {
   -webkit-appearance: none;
-  width: 80%;
+  width: 35%;
+	min-width: 150px;
   height: 2px;
   background: #fff;
   outline: none;
@@ -81,7 +83,7 @@ section.slider input {
 	position: absolute; /* keeps them on top of each other */
 }
 
-section.slider input::-webkit-slider-thumb {
+.slider input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
@@ -96,7 +98,7 @@ section.slider input::-webkit-slider-thumb {
 	z-index: 3;
 }
 
-section.slider input::-moz-range-thumb {
+.slider input::-moz-range-thumb {
   width: 25px;
   height: 25px;
   background: #fff;
@@ -107,5 +109,17 @@ section.slider input::-moz-range-thumb {
 	pointer-events: all;
 	position: relative;
 	z-index: 3;
+}
+
+.slider-value-from {
+	position: absolute;
+	margin-top: 10px;
+	font-size: 80%;
+}
+.slider-value-to {
+	position: absolute;
+	left: 35%;
+	margin-top: 10px;
+	font-size: 80%;
 }
 /*--------------- SLIDER END ----------------*/
