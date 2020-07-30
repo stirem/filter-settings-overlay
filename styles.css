@@ -79,7 +79,6 @@ section.slider input {
   outline: none;
 
 	position: absolute; /* keeps them on top of each other */
-
 }
 
 section.slider input::-webkit-slider-thumb {
@@ -90,6 +89,11 @@ section.slider input::-webkit-slider-thumb {
   background: #fff;
   cursor: pointer;
 	border-radius: 50%;
+	border-color: #fff;
+
+	pointer-events: all;
+	position: relative;
+	z-index: 3;
 }
 
 section.slider input::-moz-range-thumb {
@@ -99,5 +103,9 @@ section.slider input::-moz-range-thumb {
   cursor: pointer;
   border-radius: 50%;
 	border-color: #fff;
+
+	pointer-events: all;
+	position: relative;
+	z-index: 3;
 }
 /*--------------- SLIDER END ----------------*/
