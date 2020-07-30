@@ -78,7 +78,7 @@ section.slider input {
   background: #fff;
   outline: none;
 
-	/*position: absolute; /* keeps them on top of each other */
+	position: absolute; /* keeps them on top of each other */
 
 }
 
