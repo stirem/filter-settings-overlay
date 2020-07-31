@@ -1,3 +1,4 @@
+/*----------------- BODY ------------------*/
 html {
 	box-sizing: border-box;
 }
@@ -22,6 +23,7 @@ p {
 a {
 	color: green;
 }
+/*---------------- BODY END ----------------*/
 
 .content-wrap {
 	max-width: 800px;
@@ -56,11 +58,6 @@ a {
   padding: 32px;
   top: 0;
 	box-shadow: 0px 0px 10px 0px #000;
-}
-
-.tags {
-	position: relative;
-	margin-top: 150px;
 }
 
 
@@ -98,6 +95,10 @@ a {
 	z-index: 3;
 }
 
+.slider input::-webkit-slider-runnable-track {
+	color: #444;
+}
+
 .slider input::-moz-range-thumb {
   width: 25px;
   height: 25px;
@@ -116,6 +117,7 @@ a {
 	margin-top: 10px;
 	font-size: 80%;
 }
+
 .slider-value-to {
 	position: absolute;
 	left: 35%;
@@ -123,3 +125,23 @@ a {
 	font-size: 80%;
 }
 /*--------------- SLIDER END ----------------*/
+
+
+/*------------------- TAGS ------------------*/
+.tags {
+	position: relative;
+	margin-top: 150px;
+}
+
+.tags-buttons {
+	background-color: #9D9D9D;
+  border: none;
+  color: #000;
+  padding: 10px;
+	margin: 5px;
+  text-align: center;
+	outline: none;
+	cursor: pointer;
+	font-weight: 600;
+}
+/*------------------ TAGS END ----------------*/
