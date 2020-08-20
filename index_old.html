@@ -11,8 +11,6 @@
 </head>
 <body>
 
-
-
 <div class="button_openClose" onmousedown="overlay.show()">
 	Filter
 </div>
@@ -27,21 +25,19 @@
 
 <div class="overlay-box">
 
-	<div class="wrap" role="group" aria-labelledby="multi-lbl" style="--a: 1994; --b: 2020; --min: 1994; --max: 2020">
-		<div class="white-line"></div>
-		<div id="multi-lbl">Multi thumb slider:</div>
-		<label class="sr-only" for="a">Value A:</label>
-		<input id="a" type="range" min="1994" value="1994" max="2020"/>
-		<output for="a" style="--c: var(--a)"></output>
-		<label class="sr-only" for="b">Value B:</label>
-		<input id="b" type="range" min="1994" value="2020" max="2020"/>
-		<output for="b" style="--c: var(--b)"></output>
+	<div class="slider">
+
+		<div class="slider-value-from"></div>
+		<div class="slider-value-to"></div>
+
+	  <input type="range" min="1997" max="2020" value="1997" step="1" class="slider" oninput="overlay.getSliderValues()">
+		<input type="range" min="1997" max="2020" value="2020" step="1" class="slider" oninput="overlay.getSliderValues()">
+
 	</div>
 
 	<div class="tags"></div>
 
 </div>
-
 
 
 </body>

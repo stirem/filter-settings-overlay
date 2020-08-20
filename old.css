@@ -1,0 +1,151 @@
+/*----------------- BODY ------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	background: #FFF8E5;
+  line-height: 150%;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: green;
+}
+/*---------------- BODY END ----------------*/
+
+.content-wrap {
+	max-width: 800px;
+	width: 85%;
+	margin: 100px auto;
+	background: #fff;
+	padding: 20px;
+}
+
+.button_openClose {
+  position: absolute;
+  background: gray;
+  color: white;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  z-index: 4;
+  cursor: pointer;
+  top: 0;
+}
+
+.overlay-box {
+	width: 86%;
+  display: none;
+  left: 50%;
+  margin-left: -43%;
+  position: absolute;
+  background: black;
+  color: white;
+  z-index: 2;
+  padding: 32px;
+  top: 0;
+	box-shadow: 0px 0px 10px 0px #000;
+}
+
+
+/*----------------- SLIDER ------------------*/
+.slider {
+  width: 100%;
+	position: relative;
+	margin-bottom: 32px;
+	margin-top: 50px;
+}
+
+.slider input {
+  -webkit-appearance: none;
+	-moz-appearance: none;
+  width: 35%;
+	min-width: 150px;
+  height: 2px;
+  background: #fff;
+  outline: none;
+
+	position: absolute; /* keeps them on top of each other */
+}
+
+/*------- CHROME/SAFARI --------*/
+.slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  cursor: pointer;
+	border-radius: 50%;
+	border-color: #fff;
+
+	pointer-events: all;
+	position: relative;
+	z-index: 3;
+}
+/*------- CHROME/SAFARI end -------*/
+
+
+
+/*-------- FIREFOX --------*/
+.slider input::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+	border-color: #fff;
+
+	pointer-events: all;
+	position: relative;
+	z-index: 3;
+}
+/*------- FIREFOX end --------*/
+
+.slider-value-from {
+	position: absolute;
+	margin-top: 10px;
+	font-size: 80%;
+}
+
+.slider-value-to {
+	position: absolute;
+	left: 35%;
+	margin-top: 10px;
+	font-size: 80%;
+}
+/*--------------- SLIDER END ----------------*/
+
+
+/*------------------- TAGS ------------------*/
+.tags {
+	position: relative;
+	margin-top: 150px;
+}
+
+.tags-buttons {
+	background-color: #9D9D9D;
+  border: none;
+  color: #000;
+  padding: 10px;
+	margin: 5px;
+  text-align: center;
+	outline: none;
+	cursor: pointer;
+	font-weight: 600;
+}
+/*------------------ TAGS END ----------------*/

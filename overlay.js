@@ -1,10 +1,15 @@
 var overlay = (function() {
   'use strict';
 
+  // SLIDER
+  addEventListener('input', e => {
+    let _t = e.target;
+    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
+  }, false);
+
 
   // INIT
   window.onload = function() {
-    makeSliders();
     makeButtons();
   }
 
@@ -21,40 +26,6 @@ var overlay = (function() {
     }
   }
 
-  // SLIDERS
-  function makeSliders() {
-    var sliderSections = document.getElementsByClassName( "slider" );
-    for ( var i = 0; i < sliderSections.length; i++ ) {
-      var sliders = sliderSections[i].getElementsByTagName( "input" );
-      for ( var j = 0; j < sliders.length; j++ ) {
-        if ( sliders[j].type === "range" ) {
-          sliders[j].oninput = getSliderValues;
-          // Manually trigger event first time to display values
-          sliders[j].oninput();
-        }
-      }
-    }
-  }
-
-
-  // SLIDER VALUES
-  function getSliderValues() {
-    // Get slider values
-    var slides = document.getElementsByTagName( "input" );
-    var slide1 = parseFloat( slides[0].value );
-    var slide2 = parseFloat( slides[1].value );
-    // Neither slider will clip the other, so make sure we determine which is larger
-    if ( slide1 > slide2 ) {
-      var tmp = slide2;
-      slide2 = slide1;
-      slide1 = tmp;
-    }
-
-    var sliderValueFrom = document.querySelector( ".slider-value-from" );
-    sliderValueFrom.innerHTML = "Fra: " + slide1;
-    var sliderValueTo = document.querySelector( ".slider-value-to" );
-    sliderValueTo.innerHTML = "Til: " + slide2;
-  }
 
 
   // TAGS BUTTONS

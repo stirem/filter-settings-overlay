@@ -7,12 +7,17 @@ html {
 	box-sizing: inherit;
 }
 
+/* fix too small font-size in both Chrome & Firefox */
+* {
+  font: inherit;
+}
+
 body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	background: #FFF8E5;
+	background-color: #FFF8E5;
   line-height: 150%;
 }
 
@@ -62,68 +67,133 @@ a {
 
 
 /*----------------- SLIDER ------------------*/
-.slider {
-  width: 100%;
-	position: relative;
-	margin-bottom: 32px;
-	margin-top: 50px;
-}
 
-.slider input {
-  -webkit-appearance: none;
-  width: 35%;
-	min-width: 150px;
+.wrap {
+  --dif: calc(var(--max) - var(--min));
+  display: grid;
+  grid-template: repeat(2, -webkit-max-content) 4em/ 1fr 1fr;
+  grid-template: repeat(2, max-content) 4em/ 1fr 1fr;
+  overflow: hidden;
+  position: relative;
+  margin: 1em auto;
+  width: 20em;
+  /*background: -webkit-gradient(linear, left bottom, left top, color-stop(4em, #ccc), color-stop(0, transparent));
+  background: linear-gradient(0deg, #ccc 4em, transparent 0);*/
+  background: none;
+  font-family: ubuntu mono, consolas, monaco, monospace;
+}
+.wrap::before, .wrap::after {
+  grid-column: 1/ span 2;
+  grid-row: 3;
+  background: #ff0000;
+  content: "";
+
   height: 2px;
-  background: #fff;
-  outline: none;
-
-	position: absolute; /* keeps them on top of each other */
+  margin-top: auto;
+  margin-bottom: auto;
+  z-index: 2;
+}
+.wrap::before {
+  margin-left: calc(1em + (var(--a) - var(--min))/var(--dif)*18em);
+  width: calc((var(--b) - var(--a))/var(--dif)*18em);
+}
+.wrap::after {
+  margin-left: calc(1em + (var(--b) - var(--min))/var(--dif)*18em);
+  width: calc((var(--a) - var(--b))/var(--dif)*18em);
 }
 
-.slider input::-webkit-slider-thumb {
+[id='multi-lbl'] {
+  grid-column: 1/span 2;
+}
+
+.sr-only {
+  position: absolute;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+}
+
+input[type='range'] {
+  grid-column: 1/ span 2;
+  grid-row: 3;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background: none;
+  /* get rid of white Chrome background */
+  /*--col: #000;*/
+  --col: #fff;
+  pointer-events: none;
+}
+input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb, input[type='range'] {
   -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #fff;
-  cursor: pointer;
-	border-radius: 50%;
-	border-color: #fff;
-
-	pointer-events: all;
-	position: relative;
-	z-index: 3;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+input[type='range']::-webkit-slider-thumb {
+  border: none;
+  /* get rid of Firefox thumb border */
+  width: 2em;
+  height: 4em;
+  border-radius: 0;
+  /* get rid of Firefox corner rounding */
+  /*background: linear-gradient(90deg, #fff 2px, transparent 0) calc(1em - 1px), radial-gradient(circle, var(--col) calc(1em - 1px), transparent 1em);*/
+  background: linear-gradient(90deg, #000 0px, transparent 0) calc(1em - 1px), radial-gradient(circle, var(--col) calc(1em - 1px), transparent 1em);
+  pointer-events: auto;
+}
+input[type='range']::-moz-range-thumb {
+  border: none;
+  /* get rid of Firefox thumb border */
+  width: 2em;
+  height: 4em;
+  border-radius: 0;
+  /* get rid of Firefox corner rounding */
+  /*background: linear-gradient(90deg, #fff 2px, transparent 0) calc(1em - 1px), radial-gradient(circle, var(--col) calc(1em - 1px), transparent 1em);*/
+  background: linear-gradient(90deg, #000 0px, transparent 0) calc(1em - 1px), radial-gradient(circle, var(--col) calc(1em - 1px), transparent 1em);
+  pointer-events: auto;
 }
 
-.slider input::-webkit-slider-runnable-track {
-	color: #444;
+input[type='range']:focus {
+  z-index: 4;
+  /*outline: dotted 1px currentcolor;*/
+  outline: none;
+}
+/*input[type='range']:focus, input[type='range']:focus + output {
+  --col: darkorange ;
+}*/
+
+output {
+  grid-row: 2;
+  /*color: var(--col);*/
+  color: white;
+}
+output:last-child {
+  text-align: right;
+}
+output::after {
+  counter-reset: c var(--c);
+  content: "--" attr(for) ": " counter(c) ";";
 }
 
-.slider input::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #fff;
-  cursor: pointer;
-  border-radius: 50%;
-	border-color: #fff;
-
-	pointer-events: all;
-	position: relative;
-	z-index: 3;
+.white-line {
+  background: white;
+  height: 2px;
+  width: 100%;
+  margin-top: 0;
+  position: absolute;
+  top: 70.5%;
+  z-index: 1;
 }
 
-.slider-value-from {
-	position: absolute;
-	margin-top: 10px;
-	font-size: 80%;
-}
 
-.slider-value-to {
-	position: absolute;
-	left: 35%;
-	margin-top: 10px;
-	font-size: 80%;
-}
 /*--------------- SLIDER END ----------------*/
 
 
