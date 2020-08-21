@@ -80,7 +80,8 @@ a {
   /*background: -webkit-gradient(linear, left bottom, left top, color-stop(4em, #ccc), color-stop(0, transparent));
   background: linear-gradient(0deg, #ccc 4em, transparent 0);*/
   background: none;
-  font-family: ubuntu mono, consolas, monaco, monospace;
+
+	/* border: 1px solid; */
 }
 .wrap::before, .wrap::after {
   grid-column: 1/ span 2;
@@ -124,6 +125,7 @@ input[type='range'] {
   /*--col: #000;*/
   --col: #fff;
   pointer-events: none;
+	cursor: pointer;
 }
 input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb, input[type='range'] {
   -webkit-appearance: none;
@@ -186,10 +188,7 @@ output::after {
 .white-line {
   background: white;
   height: 2px;
-  width: 100%;
-  margin-top: 0;
   position: absolute;
-  top: 70.5%;
   z-index: 1;
 }
 
