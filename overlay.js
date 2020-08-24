@@ -1,5 +1,5 @@
 var overlay = (function() {
-  'use strict';
+  'use strict'
 
 
   // INIT
@@ -24,18 +24,18 @@ var overlay = (function() {
 
 
   // SLIDER
-  addEventListener('input', e => {
+  addEventListener( 'input', e => {
     let _t = e.target;
     _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
   }, false);
 
   function makeSliders() {
     var sliders = document.getElementsByTagName( "input" );
-      for ( var j = 0; j < sliders.length; j++ ) {
-        if ( sliders[j].type === "range" ) {
-        sliders[j].oninput = getSliderValues;
+      for ( var i = 0; i < sliders.length; i++ ) {
+        if ( sliders[i].type === "range" ) {
+        sliders[i].oninput = getSliderValues;
         // Manually trigger event first time to display values
-        sliders[j].oninput();
+        sliders[i].oninput();
       }
     }
   }
@@ -53,10 +53,9 @@ var overlay = (function() {
     }
 
     var sliderValueFrom = document.querySelector( ".slider-value-from" );
-    sliderValueFrom.innerHTML = "Fra: " + slide1;
+    sliderValueFrom.innerHTML = slide1;
     var sliderValueTo = document.querySelector( ".slider-value-to" );
-    sliderValueTo.innerHTML = "Til: " + slide2;
-
+    sliderValueTo.innerHTML = slide2;
   }
 
   function setSliderWhiteLinePos() {

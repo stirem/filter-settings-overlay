@@ -75,8 +75,8 @@ a {
   grid-template: repeat(2, max-content) 4em/ 1fr 1fr;
   overflow: hidden;
   position: relative;
-  margin: 1em auto;
-  width: 20em;
+  margin: 70px 1em auto;
+  width: 200px;
   /*background: -webkit-gradient(linear, left bottom, left top, color-stop(4em, #ccc), color-stop(0, transparent));
   background: linear-gradient(0deg, #ccc 4em, transparent 0);*/
   background: none;
@@ -95,12 +95,12 @@ a {
   z-index: 2;
 }
 .wrap::before {
-  margin-left: calc(1em + (var(--a) - var(--min))/var(--dif)*18em);
-  width: calc((var(--b) - var(--a))/var(--dif)*18em);
+  margin-left: calc(1em + (var(--a) - var(--min))/var(--dif)*180px);
+  width: calc((var(--b) - var(--a))/var(--dif)*180px);
 }
 .wrap::after {
-  margin-left: calc(1em + (var(--b) - var(--min))/var(--dif)*18em);
-  width: calc((var(--a) - var(--b))/var(--dif)*18em);
+  margin-left: calc(1em + (var(--b) - var(--min))/var(--dif)*180px);
+  width: calc((var(--a) - var(--b))/var(--dif)*180px);
 }
 
 [id='multi-lbl'] {
@@ -190,6 +190,17 @@ output::after {
   height: 2px;
   position: absolute;
   z-index: 1;
+}
+
+.slider-value-from {
+	color: #ff0000;
+}
+.slider-value-text {
+	color: #fff;
+}
+.slider-value-to {
+	color: #ff0000;
+	justify-self: end;
 }
 
 
