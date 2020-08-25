@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>mini-popup-page</title>
+	<title>filter-settings-overlay</title>
 	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -27,22 +27,20 @@
 
 <div class="overlay-box">
 
-<div class="white-line"></div>
+	<div class="button_reset" onmousedown="overlay.reset()">Nullstill</div>
 
-		<div class="wrap" role="group" aria-labelledby="multi-lbl" style="--a: 1994; --b: 2020; --min: 1994; --max: 2020">
+	<div class="header-time">Tidsavgrensing:</div>
 
+	<div class="white-line"></div>
+
+	<div class="wrap" role="group" style="--a: 1994; --b: 2020; --min: 1994; --max: 2020">
 		<div class="slider-value-from"></div>
 		<div class="slider-value-to"></div>
-
-		<!--<div id="multi-lbl">Multi thumb slider:</div>-->
-		<!--<label class="sr-only" for="a">Value A:</label>-->
 		<input id="a" type="range" min="1994" value="1994" max="2020"/>
-		<!--<output for="a" style="--c: var(--a)"></output>-->
-		<!--<label class="sr-only" for="b">Value B:</label>-->
 		<input id="b" type="range" min="1994" value="2020" max="2020"/>
-		<!--<output for="b" style="--c: var(--b)"></output>-->
 	</div>
 
+	<div class="header-tags">Tags:</div>
 	<div class="tags"></div>
 
 </div>

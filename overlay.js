@@ -24,6 +24,7 @@ var overlay = (function() {
 
 
   // SLIDER
+
   addEventListener( 'input', e => {
     let _t = e.target;
     _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
@@ -31,8 +32,8 @@ var overlay = (function() {
 
   function makeSliders() {
     var sliders = document.getElementsByTagName( "input" );
-      for ( var i = 0; i < sliders.length; i++ ) {
-        if ( sliders[i].type === "range" ) {
+    for ( var i = 0; i < sliders.length; i++ ) {
+      if ( sliders[i].type === "range" ) {
         sliders[i].oninput = getSliderValues;
         // Manually trigger event first time to display values
         sliders[i].oninput();
@@ -103,12 +104,43 @@ var overlay = (function() {
 
   }
 
+  // RESET BUTTON
+  function reset()  {
+    for ( var i = 0; i < tags.length; i++ ) {
+      document.getElementById( i ).style.background = "#9D9D9D";
+      document.getElementById( i ).style.color = "#000";
+      document.getElementById( i ).style.transform = "translateY( 0px )";
+      buttonIsSelected[i] = false;
+    }
+
+    let sliders = document.getElementsByTagName( "input" );
+    sliders[0].value = 1994;
+    sliders[1].value = 2020;
+    let sliderValueFrom = document.querySelector( ".slider-value-from" );
+    sliderValueFrom.innerHTML = sliders[0].value;
+    let sliderValueTo = document.querySelector( ".slider-value-to" );
+    sliderValueTo.innerHTML = sliders[1].value;
+
+
+    for ( var i = 0; i < sliders.length; i++ ) {
+      if ( sliders[i].type === "range" ) {
+        sliders[i].oninput = getSliderValues;
+        sliders[i].oninput();
+      }
+    }
+
+
+
+
+  }
+
 
 
   // RETURN
   return {
     show: show,
-    buttonClick: buttonClick
+    buttonClick: buttonClick,
+    reset: reset
   }
 
 })();
